@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Happy Birthday, My Love ❤️</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", Arial, sans-serif;
+      background: #fff5f7;
+      color: #3d2630;
+      overflow-x: hidden;
+    }
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 20% 20%, #ffd9e3 0, transparent 25%),
+        radial-gradient(circle at 80% 80%, #ffe5ec 0, transparent 30%),
+        linear-gradient(135deg, #fff5f7, #ffe8ef);
+    }
+
+    .hero-content {
+      max-width: 800px;
+      z-index: 2;
+      animation: fadeUp 1.5s ease;
+    }
+
+    .small-text {
+      color: #d94f75;
+      font-size: 1rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(3rem, 9vw, 7rem);
+      color: #c73563;
+      line-height: 1;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: #ef7197;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      max-width: 650px;
+      margin: auto;
+      color: #65424d;
+    }
+
+    .hero-button {
+      display: inline-block;
+      margin-top: 35px;
+      padding: 15px 32px;
+      border-radius: 50px;
+      background: #d94f75;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      box-shadow: 0 10px 25px rgba(217, 79, 117, 0.25);
+    }
+
+    .hero-button:hover {
+      transform: translateY(-4px) scale(1.03);
+      background: #c73563;
+    }
+
+    /* ---------- FLOATING HEARTS ---------- */
+
+    .heart {
+      position: absolute;
+      bottom: -50px;
+      font-size: 25px;
+      animation: floatHeart linear infinite;
+      opacity: 0.65;
+      pointer-events: none;
+    }
+
+    .heart:nth-child(1) {
+      left: 10%;
+      animation-duration: 7s;
+    }
+
+    .heart:nth-child(2) {
+      left: 25%;
+      animation-duration: 9s;
+      animation-delay: 2s;
+    }
+
+    .heart:nth-child(3) {
+      left: 50%;
+      animation-duration: 8s;
+      animation-delay: 1s;
+    }
+
+    .heart:nth-child(4) {
+      left: 70%;
+      animation-duration: 10s;
+      animation-delay: 3s;
+    }
+
+    .heart:nth-child(5) {
+      left: 88%;
+      animation-duration: 7s;
+      animation-delay: 1.5s;
+    }
+
+    @keyframes floatHeart {
+      from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 0.7;
+      }
+
+      to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ---------- SECTIONS ---------- */
+
+    section {
+      padding: 90px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      color: #c73563;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: #8a6872;
+    }
+
+    /* ---------- LOVE LETTER ---------- */
+
+    .letter {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 50px;
+      border-radius: 25px;
+      box-shadow: 0 20px 60px rgba(111, 53, 73, 0.1);
+      position: relative;
+    }
+
+    .letter::before {
+      content: "♥";
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #d94f75;
+      color: white;
+      border-radius: 50%;
+    }
+
+    .letter p {
+      font-family: Georgia, serif;
+      font-size: 1.15rem;
+      line-height: 2;
+      color: #5d414b;
+      text-align: center;
+    }
+
+    /* ---------- PHOTOS ---------- */
+
+    .photos {
+      background: #fff;
+    }
+
+    .gallery {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .photo {
+      height: 350px;
+      border-radius: 22px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(83, 39, 53, 0.12);
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .photo:hover img {
+      transform: scale(1.08);
+    }
+
+    .photo::after {
+      content: "❤️";
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      background: rgba(198, 53, 99, 0.25);
+      opacity: 0;
+      transition: 0.3s;
+    }
+
+    .photo:hover::after {
+      opacity: 1;
+    }
+
+    /* ---------- QUOTES ---------- */
+
+    .quotes-section {
+      background: linear-gradient(135deg, #fff0f4, #ffe4ec);
+    }
+
+    .quote-card {
+      max-width: 750px;
+      min-height: 260px;
+      margin: auto;
+      background: white;
+      border-radius: 30px;
+      padding: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(111, 53, 73, 0.1);
+    }
+
+    .quote-mark {
+      font-family: Georgia, serif;
+      font-size: 5rem;
+      color: #ef9ab2;
+      height: 55px;
+    }
+
+    #quote {
+      font-family: Georgia, serif;
+      font-size: 1.6rem;
+      line-height: 1.6;
+      color: #563540;
+      margin: 20px 0;
+      transition: opacity 0.3s;
+    }
+
+    #quote-author {
+      color: #c73563;
+      font-weight: bold;
+    }
+
+    .quote-button {
+      margin: 30px auto 0;
+      border: none;
+      padding: 13px 25px;
+      border-radius: 50px;
+      background: #d94f75;
+      color: white;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    .quote-button:hover {
+      background: #c73563;
+      transform: translateY(-2px);
+    }
+
+    /* ---------- SURPRISE ---------- */
+
+    .surprise {
+      text-align: center;
+      background: #c73563;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .surprise h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      margin-bottom: 20px;
+    }
+
+    .surprise p {
+      max-width: 600px;
+      margin: auto;
+      line-height: 1.8;
+      color: #ffe8ef;
+    }
+
+    .surprise-button {
+      margin-top: 30px;
+      padding: 16px 35px;
+      border: none;
+      border-radius: 50px;
+      background: white;
+      color: #c73563;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .surprise-button:hover {
+      transform: scale(1.05);
+    }
+
+    #surprise-message {
+      display: none;
+      margin: 30px auto 0;
+      max-width: 650px;
+      font-family: Georgia, serif;
+      font-size: 1.5rem;
+      line-height: 1.7;
+    }
+
+    /* ---------- FOOTER ---------- */
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      background: #351d27;
+      color: #ffdce6;
+    }
+
+    footer span {
+      color: #ff7fa2;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+
+    @media (max-width: 800px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .photo {
+        height: 300px;
+      }
+
+      .letter {
+        padding: 35px 25px;
+      }
+    }
+
+    @media (max-width: 550px) {
+      section {
+        padding: 70px 5%;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .photo {
+        height: 380px;
+      }
+
+      .quote-card {
+        padding: 35px 20px;
+      }
+
+      #quote {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="heart">❤️</div>
+    <div class="heart">💗</div>
+    <div class="heart">💕</div>
+    <div class="heart">💖</div>
+    <div class="heart">❤️</div>
+
+    <div class="hero-content">
+
+      <div class="small-text">
+        A little website made with a lot of love
+      </div>
+
+      <h1>
+        Happy Birthday<br>
+        <span>My Kuchu Puchu ❤️</span>
+      </h1>
+
+      <p>
+        Today isn't just another day.
+        It's the day the world became a little more beautiful
+        because you were born.
+      </p>
+
+      <a href="#letter" class="hero-button">
+        Open Your Surprise 💌
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- LOVE LETTER -->
+  <section id="letter">
+
+    <div class="section-title">
+      <h2>A Letter For You</h2>
+      <p>From my heart to yours ❤️</p>
+    </div>
+
+    <div class="letter">
+
+      <p>
+        My love,<br><br>
+
+        Happy Birthday to the most beautiful person in my life.
+        Every moment with you is something I want to keep forever.
+        Your smile makes my worst days better, your presence makes
+        ordinary moments special, and your love makes my life
+        feel complete.<br><br>
+
+        I hope this new year of your life brings you everything
+        you've ever dreamed of. Keep smiling, keep shining,
+        and always remember that someone out there loves you
+        more than words could ever explain.<br><br>
+
+        Happy Birthday, princess. ❤️
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- PHOTOS -->
+  <section class="photos" id="photos">
+
+    <div class="section-title">
+      <h2>Our Beautiful Memories 📸</h2>
+      <p>Some moments I'll always keep close to my heart.</p>
+    </div>
+
+    <div class="gallery">
+
+      <!-- Replace these images with your own photos -->
+
+      <div class="photo">
+        <img
+          src="C:\Users\nitesh belwal\OneDrive\Desktop\happy birthday\WhatsApp Image 2026-09-25 at 10.49.09 AM.jpeg"
+          alt="Beautiful memory"
+        >
+      </div>
+
+      <div class="photo">
+        <img
+          src="C:\Users\nitesh belwal\OneDrive\Desktop\happy birthday\WhatsApp Image 2026-09-25 at 10.49.09 AM (1).jpeg"
+          alt="Romantic memory"
+        >
+      </div>
+
+      <div class="photo">
+        <img
+          src="C:\Users\nitesh belwal\OneDrive\Desktop\happy birthday\WhatsApp Image 2026-09-25 at 10.49.08 AM.jpeg"
+          alt="Couple memory"
+        >
+      </div>
+
+      <div class="photo">
+        <img
+          src="C:\Users\nitesh belwal\OneDrive\Desktop\happy birthday\WhatsApp Image 2026-09-25 at 10.49.08 AM (1).jpeg"
+          alt="Happy memory"
+        >
+      </div>
+
+      <div class="photo">
+        <img
+          src="C:\Users\nitesh belwal\OneDrive\Desktop\happy birthday\WhatsApp Image 2026-09-25 at 10.49.07 AM.jpeg"
+          alt="Love memory"
+        >
+      </div>
+
+      <div class="photo">
+        <img
+          src="C:\Users\nitesh belwal\OneDrive\Desktop\happy birthday\WhatsApp Image 2026-09-25 at 10.49.07 AM (1).jpeg"
+          alt="Special memory"
+        >
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- QUOTES -->
+  <section class="quotes-section" id="quotes">
+
+    <div class="section-title">
+      <h2>Little Things I Want You To Know 💕</h2>
+      <p>Because sometimes one sentence says everything.</p>
+    </div>
+
+    <div class="quote-card">
+
+      <div class="quote-mark">“</div>
+
+      <div id="quote">
+        You are my favorite notification,
+        my favorite person, and my favorite place to be.
+      </div>
+
+      <div id="quote-author">
+        — With all my love ❤️
+      </div>
+
+      <button class="quote-button" id="nextQuote">
+        Another One 💗
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- SURPRISE -->
+  <section class="surprise">
+
+    <h2>One Last Surprise 💝</h2>
+
+    <p>
+      There's something I really want you to remember today...
+    </p>
+
+    <button class="surprise-button" id="surpriseButton">
+      Click Me ❤️
+    </button>
+
+    <div id="surprise-message">
+      No matter how many birthdays come and go,
+      I hope I get to celebrate every single one with you.
+      <br><br>
+      I love you more than yesterday,
+      but somehow less than tomorrow. ❤️
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    Made with <span>♥</span> especially for you.
+    <br>
+    Happy Birthday, beautiful! 🎂
+  </footer>
+
+
+  <script>
+
+    /* ---------- QUOTE CHANGER ---------- */
+
+    const quotes = [
+      "You are my favorite notification, my favorite person, and my favorite place to be.",
+
+      "If I could give you one thing in life, I would give you the ability to see yourself through my eyes.",
+
+      "Every love story is beautiful, but ours will always be my favorite.",
+
+      "You walked into my life and somehow made everything brighter.",
+
+      "I don't need a perfect life. I just need you beside me.",
+
+      "Your smile is still my favorite thing in the entire world.",
+
+      "I would choose you in every lifetime, in every universe, and in every version of our story."
+    ];
+
+    const quoteElement = document.getElementById("quote");
+    const quoteButton = document.getElementById("nextQuote");
+
+    let quoteIndex = 0;
+
+    quoteButton.addEventListener("click", () => {
+
+      quoteElement.style.opacity = "0";
+
+      setTimeout(() => {
+
+        quoteIndex++;
+
+        if (quoteIndex >= quotes.length) {
+          quoteIndex = 0;
+        }
+
+        quoteElement.textContent = quotes[quoteIndex];
+        quoteElement.style.opacity = "1";
+
+      }, 250);
+
+    });
+
+
+    /* ---------- SURPRISE MESSAGE ---------- */
+
+    const surpriseButton =
+      document.getElementById("surpriseButton");
+
+    const surpriseMessage =
+      document.getElementById("surprise-message");
+
+    surpriseButton.addEventListener("click", () => {
+
+      surpriseMessage.style.display = "block";
+
+      surpriseButton.textContent = "I Love You ❤️";
+
+      createHearts();
+
+    });
+
+
+    /* ---------- HEART EXPLOSION ---------- */
+
+    function createHearts() {
+
+      for (let i = 0; i < 25; i++) {
+
+        const heart = document.createElement("div");
+
+        heart.textContent =
+          ["❤️", "💗", "💕", "💖", "💝"][
+            Math.floor(Math.random() * 5)
+          ];
+
+        heart.style.position = "fixed";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.top = "80vh";
+        heart.style.fontSize =
+          (Math.random() * 20 + 20) + "px";
+        heart.style.zIndex = "9999";
+        heart.style.pointerEvents = "none";
+
+        document.body.appendChild(heart);
+
+        const animation = heart.animate(
+          [
+            {
+              transform: "translateY(0) scale(1)",
+              opacity: 1
+            },
+            {
+              transform:
+                `translateY(-${Math.random() * 500 + 300}px)
+                 rotate(${Math.random() * 720 - 360}deg)
+                 scale(0.3)`,
+              opacity: 0
+            }
+          ],
+          {
+            duration: Math.random() * 2000 + 2000,
+            easing: "ease-out"
+          }
+        );
+
+        animation.onfinish = () => {
+          heart.remove();
+        };
+      }
+    }
+
+  </script>
+
+</body>
+</html>
